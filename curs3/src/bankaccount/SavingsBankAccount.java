@@ -15,4 +15,9 @@ public class SavingsBankAccount extends Account {
     public void setTerm(int term) {
         this.term = term;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + " / " + term;
+    }
 }

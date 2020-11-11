@@ -20,4 +20,9 @@ public class Account {
     public String getAccountNumber() {
         return accountNumber;
     }
+
+    @Override
+    public String toString() {
+        return balance + " / " + accountNumber;
+    }
 }

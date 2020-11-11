@@ -9,9 +9,9 @@ public class Bank {
     }
 
     public void addBankAccount(Account account) {
-        for(Account a : bankAccounts) {
-            if(a == null) {
-                a = account;
+        for(int i = 0; i < bankAccounts.length; i++) {
+            if(bankAccounts[i] == null) {
+                bankAccounts[i] = account;
                 break;
             }
         }
@@ -29,4 +29,41 @@ public class Bank {
 //            }
 //        }
     }
+
+    public void printBankAccounts() {
+        for(int i = 0; i < bankAccounts.length; i++) {
+            if(bankAccounts[i] != null) {
+                System.out.println(bankAccounts[i]);
+            } else {
+                break;
+            }
+        }
+    }
+
+    public void searchBankAccount(String accountNumber) {
+        for(Account a : bankAccounts) {
+            if(a != null) {
+                if(a.accountNumber.equals(accountNumber)) {
+                    if(a instanceof DebitBankAccount) {
+                        DebitBankAccount debitBankAccount = (DebitBankAccount) a;
+                        System.out.println(debitBankAccount.getClass().getName() + " " + debitBankAccount);
+                    } else if(a instanceof SavingsBankAccount) {
+                        SavingsBankAccount savingsBankAccount = (SavingsBankAccount) a;
+                        System.out.println(savingsBankAccount.getClass().getName() + " " + savingsBankAccount);
+                    }
+                }
+            } else {
+                break;
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
 }

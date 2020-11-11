@@ -25,4 +25,9 @@ public class DebitBankAccount extends Account {
     public void setWithdrawalLimit(double withdrawalLimit) {
         this.withdrawalLimit = withdrawalLimit;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + " / " + cardNumber + " / " + withdrawalLimit;
+    }
 }
