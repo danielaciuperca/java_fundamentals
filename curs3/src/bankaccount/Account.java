@@ -1,6 +1,6 @@
 package bankaccount;
 
-public class Account {
+public abstract class Account {
     protected double balance;
     protected String accountNumber;
 

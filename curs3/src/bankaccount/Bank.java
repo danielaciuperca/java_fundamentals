@@ -1,8 +1,15 @@
 package bankaccount;
 
+import bankaccount.notification.NotificationEngine;
+
 public class Bank {
 
     private Account[] bankAccounts = new Account[100];
+    private NotificationEngine notificationEngine; //TODO implement list of notifications
+
+    public Bank(NotificationEngine notificationEngine) {
+        this.notificationEngine = notificationEngine;
+    }
 
     public Account[] getBankAccounts() {
         return bankAccounts;
@@ -12,6 +19,7 @@ public class Bank {
         for(int i = 0; i < bankAccounts.length; i++) {
             if(bankAccounts[i] == null) {
                 bankAccounts[i] = account;
+                notificationEngine.sendNotification(account);
                 break;
             }
         }
