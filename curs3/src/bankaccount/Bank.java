@@ -5,6 +5,8 @@ import bankaccount.notification.NotificationEngine;
 public class Bank {
 
     private Account[] bankAccounts = new Account[100];
+    // this is an application of Inversion of control principle (one of the SOLID principles)
+    // Open for extension, close for modification principle
     private NotificationEngine notificationEngine; //TODO implement list of notifications
 
     public Bank(NotificationEngine notificationEngine) {
