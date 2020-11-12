@@ -76,13 +76,18 @@ public class BankApplication {
 
     private static void addDebitBankAccount(Scanner scanner) {
         String[] bankAccountDetails = getBankAccountDetails(scanner);
-        double balance = Double.parseDouble(bankAccountDetails[0]);
-        String accountNumber = bankAccountDetails[1];
-        String cardNumber = bankAccountDetails[2];
-        double withdrawalLimit = Double.parseDouble(bankAccountDetails[3]);
+        if (bankAccountDetails != null && bankAccountDetails.length == DebitBankAccount.NUMBER_OF_ATTRIBUTES) {
+            double balance = Double.parseDouble(bankAccountDetails[0]);
+            String accountNumber = bankAccountDetails[1];
+            String cardNumber = bankAccountDetails[2];
+            double withdrawalLimit = Double.parseDouble(bankAccountDetails[3]);
 
-        DebitBankAccount debitBankAccount = new DebitBankAccount(balance, accountNumber, cardNumber, withdrawalLimit);
-        bank.addBankAccount(debitBankAccount);
+            DebitBankAccount debitBankAccount = new DebitBankAccount(balance, accountNumber, cardNumber, withdrawalLimit);
+            bank.addBankAccount(debitBankAccount);
+        } else {
+            System.out.println("Missing mandatory details for the bank account.");
+        }
+
     }
 
     private static void addSavingsBankAccount(Scanner scanner) {

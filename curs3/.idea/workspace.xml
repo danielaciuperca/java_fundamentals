@@ -13,247 +13,33 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/bankaccount/Account.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
-                  <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-                  <folding>
-                    <element signature="e#294#295#0" expanded="true" />
-                    <element signature="e#324#325#0" expanded="true" />
-                    <element signature="e#370#371#0" expanded="true" />
-                    <element signature="e#408#409#0" expanded="true" />
-                    <element signature="e#448#449#0" expanded="true" />
-                    <element signature="e#484#485#0" expanded="true" />
-                    <element signature="e#530#531#0" expanded="true" />
-                    <element signature="e#584#585#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="uml://JAVA/bankaccount">
-              <provider selected="true" editor-type-id="UmlEditorProvider">
-                <state>
-                  <ID>JAVA</ID>
-                  <OriginalElement>bankaccount</OriginalElement>
-                  <nodes>
-                    <node x="448.99999999999994" y="117.0">bankaccount.notification.NotificationEngine</node>
-                    <node x="771.1029411764705" y="234.0">bankaccount.notification.EmailNotificationEngine</node>
-                    <node x="0.0" y="117.0">bankaccount.SavingsBankAccount</node>
-                    <node x="408.62079831932766" y="234.0">bankaccount.Bank</node>
-                    <node x="523.1029411764705" y="237.0">bankaccount.notification.SmsNotificationEngine</node>
-                    <node x="208.13865546218477" y="321.0">bankaccount.BankApplication</node>
-                    <node x="358.28151260504194" y="0.0">bankaccount.Account</node>
-                    <node x="221.99999999999997" y="117.0">bankaccount.DebitBankAccount</node>
-                  </nodes>
-                  <notes />
-                  <edges>
-                    <edge source="bankaccount.Bank" target="bankaccount.DebitBankAccount">
-                      <point x="-22.571428571428555" y="-13.5" />
-                      <point x="425.5493697478991" y="194.0" />
-                      <point x="375.3333333333333" y="194.0" />
-                      <point x="61.33333333333334" y="13.5" />
-                    </edge>
-                    <edge source="bankaccount.BankApplication" target="bankaccount.notification.EmailNotificationEngine">
-                      <point x="75.42857142857144" y="-13.5" />
-                      <point x="371.5672268907562" y="301.0" />
-                      <point x="894.1029411764705" y="301.0" />
-                      <point x="0.0" y="13.5" />
-                    </edge>
-                    <edge source="bankaccount.notification.EmailNotificationEngine" target="bankaccount.Account">
-                      <point x="61.5" y="-13.5" />
-                      <point x="955.6029411764705" y="47.0" />
-                      <point x="458.03151260504194" y="47.0" />
-                      <point x="47.25" y="13.5" />
-                    </edge>
-                    <edge source="bankaccount.notification.SmsNotificationEngine" target="bankaccount.notification.NotificationEngine">
-                      <point x="-57.0" y="-13.5" />
-                      <point x="580.1029411764705" y="214.0" />
-                      <point x="575.25" y="214.0" />
-                      <point x="25.25" y="13.5" />
-                    </edge>
-                    <edge source="bankaccount.Bank" target="bankaccount.Account">
-                      <point x="0.0" y="-13.5" />
-                      <point x="448.12079831932766" y="174.0" />
-                      <point x="427.49999999999994" y="174.0" />
-                      <point x="427.49999999999994" y="87.0" />
-                      <point x="416.03151260504194" y="87.0" />
-                      <point x="5.25" y="13.5" />
-                    </edge>
-                    <edge source="bankaccount.Bank" target="bankaccount.notification.NotificationEngine">
-                      <point x="22.571428571428555" y="-13.5" />
-                      <point x="470.6922268907562" y="214.0" />
-                      <point x="474.24999999999994" y="214.0" />
-                      <point x="-75.75" y="13.5" />
-                    </edge>
-                    <edge source="bankaccount.DebitBankAccount" target="bankaccount.Account">
-                      <point x="-46.0" y="-13.5" />
-                      <point x="268.0" y="87.0" />
-                      <point x="384.53151260504194" y="87.0" />
-                      <point x="-26.25" y="13.5" />
-                    </edge>
-                    <edge source="bankaccount.BankApplication" target="bankaccount.SavingsBankAccount">
-                      <point x="-50.285714285714334" y="-13.5" />
-                      <point x="245.85294117647044" y="291.0" />
-                      <point x="80.13865546218477" y="291.0" />
-                      <point x="80.13865546218477" y="214.0" />
-                      <point x="101.0" y="214.0" />
-                      <point x="0.0" y="13.5" />
-                    </edge>
-                    <edge source="bankaccount.BankApplication" target="bankaccount.DebitBankAccount">
-                      <point x="0.0" y="-13.5" />
-                      <point x="296.1386554621848" y="214.0" />
-                      <point x="314.0" y="214.0" />
-                      <point x="0.0" y="13.5" />
-                    </edge>
-                    <edge source="bankaccount.BankApplication" target="bankaccount.Bank">
-                      <point x="25.14285714285711" y="-13.5" />
-                      <point x="321.2815126050419" y="281.0" />
-                      <point x="428.37079831932766" y="281.0" />
-                      <point x="-19.75" y="13.5" />
-                    </edge>
-                    <edge source="bankaccount.notification.EmailNotificationEngine" target="bankaccount.notification.NotificationEngine">
-                      <point x="-61.5" y="-13.5" />
-                      <point x="832.6029411764705" y="204.0" />
-                      <point x="625.75" y="204.0" />
-                      <point x="75.75" y="13.5" />
-                    </edge>
-                    <edge source="bankaccount.notification.SmsNotificationEngine" target="bankaccount.Account">
-                      <point x="57.0" y="-13.5" />
-                      <point x="694.1029411764705" y="214.0" />
-                      <point x="680.2279411764705" y="214.0" />
-                      <point x="680.2279411764705" y="57.0" />
-                      <point x="447.53151260504194" y="57.0" />
-                      <point x="36.75" y="13.5" />
-                    </edge>
-                    <edge source="bankaccount.notification.NotificationEngine" target="bankaccount.Account">
-                      <point x="0.0" y="-13.5" />
-                      <point x="550.0" y="67.0" />
-                      <point x="437.03151260504194" y="67.0" />
-                      <point x="26.25" y="13.5" />
-                    </edge>
-                    <edge source="bankaccount.SavingsBankAccount" target="bankaccount.Account">
-                      <point x="-50.5" y="-13.5" />
-                      <point x="50.5" y="67.0" />
-                      <point x="363.53151260504194" y="67.0" />
-                      <point x="-47.25" y="13.5" />
-                    </edge>
-                    <edge source="bankaccount.Bank" target="bankaccount.SavingsBankAccount">
-                      <point x="-33.85714285714283" y="-13.5" />
-                      <point x="414.26365546218483" y="204.0" />
-                      <point x="168.33333333333331" y="204.0" />
-                      <point x="67.33333333333331" y="13.5" />
-                    </edge>
-                  </edges>
-                  <settings layout="Hierarchic Group" zoom="1.0" x="59.0" y="38.0" />
-                  <SelectedNodes>
-                    <node>bankaccount.notification.SmsNotificationEngine</node>
-                  </SelectedNodes>
-                  <Categories />
-                  <SCOPE>All</SCOPE>
-                  <VISIBILITY>private</VISIBILITY>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/bankaccount/Bank.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="37" />
-                  <folding>
-                    <element signature="e#563#564#0" expanded="true" />
-                    <element signature="e#623#624#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/bankaccount/notification/NotificationEngine.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="85">
-                  <caret line="5" column="8" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="8" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/bankaccount/notification/EmailNotificationEngine.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/bankaccount/notification/SmsNotificationEngine.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="7" column="31" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="31" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/bankaccount/BankApplication.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="11" column="28" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="28" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/bankaccount/DebitBankAccount.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="408">
-                  <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
-                  <folding>
-                    <element signature="e#1021#1022#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/bankaccount/SavingsBankAccount.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="340">
-                  <caret line="28" selection-start-line="28" selection-end-line="28" />
-                  <folding>
-                    <element signature="e#509#510#0" expanded="true" />
-                    <element signature="e#579#580#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/bankaccount/notification/SmsNotificationEngine.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="7" column="31" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="31" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/bankaccount/BankApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="181">
+              <caret line="78" column="108" selection-start-line="78" selection-start-column="108" selection-end-line="78" selection-end-column="108" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bankaccount/DebitBankAccount.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="48" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="48" />
+              <folding>
+                <element signature="e#918#919#0" expanded="true" />
+                <element signature="e#1021#1022#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -272,13 +58,13 @@
         <option value="$PROJECT_DIR$/src/bankaccount/EmailNotificationEngine.java" />
         <option value="$PROJECT_DIR$/src/bankaccount/SmsNotificationEngine.java" />
         <option value="$PROJECT_DIR$/src/bankaccount/notification/SmsNotificationEngine.java" />
-        <option value="$PROJECT_DIR$/src/bankaccount/notification/EmailNotificationEngine.java" />
         <option value="$PROJECT_DIR$/src/bankaccount/Account.java" />
         <option value="$PROJECT_DIR$/src/bankaccount/SavingsBankAccount.java" />
-        <option value="$PROJECT_DIR$/src/bankaccount/DebitBankAccount.java" />
         <option value="$PROJECT_DIR$/src/bankaccount/class diagram.puml" />
         <option value="$PROJECT_DIR$/src/bankaccount/notification/NotificationEngine.java" />
+        <option value="$PROJECT_DIR$/src/bankaccount/notification/EmailNotificationEngine.java" />
         <option value="$PROJECT_DIR$/src/bankaccount/Bank.java" />
+        <option value="$PROJECT_DIR$/src/bankaccount/DebitBankAccount.java" />
         <option value="$PROJECT_DIR$/src/bankaccount/BankApplication.java" />
       </list>
     </option>
@@ -401,18 +187,19 @@
       <workItem from="1605081215577" duration="20193000" />
       <workItem from="1605163998149" duration="3878000" />
       <workItem from="1605170185610" duration="352000" />
-      <workItem from="1605170588620" duration="3519000" />
+      <workItem from="1605170588620" duration="5768000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27942000" />
+    <option name="totallyTimeSpent" value="30191000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="simpleUML" weight="0.53557044" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.18255034" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18255034" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -421,7 +208,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33569404" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2733711" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -482,27 +269,6 @@
           <Categories />
           <SCOPE>All</SCOPE>
           <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bankaccount/DebitBankAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
-          <folding>
-            <element signature="e#1021#1022#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bankaccount/SavingsBankAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="e#509#510#0" expanded="true" />
-            <element signature="e#579#580#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -675,27 +441,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bankaccount/Bank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="37" />
-          <folding>
-            <element signature="e#563#564#0" expanded="true" />
-            <element signature="e#623#624#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bankaccount/BankApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="28" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/bankaccount/notification/SmsNotificationEngine.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -705,8 +450,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bankaccount/notification/EmailNotificationEngine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="85">
+          <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bankaccount/SavingsBankAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding>
+            <element signature="e#509#510#0" expanded="true" />
+            <element signature="e#579#580#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bankaccount/Bank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="24" column="23" lean-forward="true" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+          <folding>
+            <element signature="e#563#564#0" expanded="true" />
+            <element signature="e#623#624#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bankaccount/DebitBankAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="48" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="48" />
+          <folding>
+            <element signature="e#918#919#0" expanded="true" />
+            <element signature="e#1021#1022#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bankaccount/BankApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="78" column="108" selection-start-line="78" selection-start-column="108" selection-end-line="78" selection-end-column="108" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

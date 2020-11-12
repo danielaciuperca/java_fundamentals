@@ -1,6 +1,8 @@
 package bankaccount;
 
 public class DebitBankAccount extends Account {
+    public static final int NUMBER_OF_ATTRIBUTES = 4;
+
     private String cardNumber;
     private double withdrawalLimit;
 
