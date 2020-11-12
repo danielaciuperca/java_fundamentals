@@ -91,14 +91,11 @@ public class Bank {
                     String bankAccountType = allBankAccountDetails[0];
 
                     if("debit".equals(bankAccountType)) {
-                        String[] bankAccountAttributeDetails = {allBankAccountDetails[1], allBankAccountDetails[2],
-                                allBankAccountDetails[3], allBankAccountDetails[4]};
-
+                        String[] bankAccountAttributeDetails = getDebitBankAccountAttributeDetails(allBankAccountDetails);
                         DebitBankAccount debitBankAccount = buildDebitBankAccount(bankAccountAttributeDetails);
                         addBankAccount(debitBankAccount);
                     } else if("savings".equals(bankAccountType)) {
-                        String[] bankAccountAttributeDetails = {allBankAccountDetails[1], allBankAccountDetails[2],
-                                allBankAccountDetails[3]};
+                        String[] bankAccountAttributeDetails = getSavingsBankAccountAttributeDetails(allBankAccountDetails);
                         SavingsBankAccount savingsBankAccount = buildSavingsBankAccount(bankAccountAttributeDetails);
                         addBankAccount(savingsBankAccount);
                     } else {
@@ -111,9 +108,19 @@ public class Bank {
 //               line.split();
 //            }
         } catch(IOException e){
-            System.out.println(e.getMessage());
+            System.out.println("Exception while reading from file: " + e.getMessage());
         } finally {
-            System.out.println("Done importing from the file");
+            System.out.println("Done importing from the file.");
+        }
+    }
+
+    private String[] getDebitBankAccountAttributeDetails(String[] bankAccountDetails) {
+        if (bankAccountDetails != null && bankAccountDetails.length == DebitBankAccount.NUMBER_OF_ATTRIBUTES + 1) {
+            return new String[]{bankAccountDetails[1], bankAccountDetails[2],
+                    bankAccountDetails[3], bankAccountDetails[4]};
+        } else {
+            throw new RuntimeException("Incorrect mandatory details for the bank account. Needed: " +
+                    DebitBankAccount.NUMBER_OF_ATTRIBUTES + ", but it was " + (bankAccountDetails.length - 1));
         }
     }
 
@@ -128,6 +135,16 @@ public class Bank {
         } else {
             throw new RuntimeException("Incorrect mandatory details for the bank account. Needed: " +
                     DebitBankAccount.NUMBER_OF_ATTRIBUTES + ", but it was " + bankAccountDetails.length);
+        }
+    }
+
+    private String[] getSavingsBankAccountAttributeDetails(String[] bankAccountDetails) {
+        if(bankAccountDetails != null && bankAccountDetails.length == SavingsBankAccount.NUMBER_OF_ATTRIBUTES + 1) {
+            return new String[]{bankAccountDetails[1], bankAccountDetails[2],
+                    bankAccountDetails[3]};
+        } else {
+            throw new RuntimeException("Incorrect mandatory details for the bank account. Needed: " +
+                    SavingsBankAccount.NUMBER_OF_ATTRIBUTES + ", but it was " + (bankAccountDetails.length - 1));
         }
     }
 
