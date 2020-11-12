@@ -20,4 +20,9 @@ public class SavingsBankAccount extends Account {
     public String toString() {
         return super.toString() + " / " + term;
     }
+
+    @Override
+    public void close() {
+        System.out.println("Savings bank account was closed.");
+    }
 }

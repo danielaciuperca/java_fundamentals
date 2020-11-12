@@ -1,13 +1,15 @@
 package bankaccount;
 
 import bankaccount.notification.EmailNotificationEngine;
+import bankaccount.notification.NotificationEngine;
 import bankaccount.notification.SmsNotificationEngine;
 
 import java.util.Scanner;
 
 public class BankApplication {
 
-    private static Bank bank = new Bank(new EmailNotificationEngine());
+    private static NotificationEngine[] notificationEngines = {new SmsNotificationEngine(), new EmailNotificationEngine()};
+    private static Bank bank = new Bank(notificationEngines);
 
     public static void main(String[] args) {
         /*

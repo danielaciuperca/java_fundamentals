@@ -28,6 +28,11 @@ public class DebitBankAccount extends Account {
 
     @Override
     public String toString() {
-        return super.toString() + " / " + cardNumber + " / " + withdrawalLimit;
+        return super.toString() + " / " + this.cardNumber + " / " + withdrawalLimit;
+    }
+
+    @Override
+    public void close() {
+        System.out.println("Debit bank account was closed. The attached card was also closed.");
     }
 }

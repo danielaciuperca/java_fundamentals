@@ -25,4 +25,6 @@ public abstract class Account {
     public String toString() {
         return balance + " / " + accountNumber;
     }
+
+    public abstract void close();
 }

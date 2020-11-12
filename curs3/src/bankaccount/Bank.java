@@ -7,10 +7,10 @@ public class Bank {
     private Account[] bankAccounts = new Account[100];
     // this is an application of Inversion of control principle (one of the SOLID principles)
     // Open for extension, close for modification principle
-    private NotificationEngine notificationEngine; //TODO implement list of notifications
+    private NotificationEngine[] notificationEngines;
 
-    public Bank(NotificationEngine notificationEngine) {
-        this.notificationEngine = notificationEngine;
+    public Bank(NotificationEngine[] notificationEngines) {
+        this.notificationEngines = notificationEngines;
     }
 
     public Account[] getBankAccounts() {
@@ -21,7 +21,9 @@ public class Bank {
         for(int i = 0; i < bankAccounts.length; i++) {
             if(bankAccounts[i] == null) {
                 bankAccounts[i] = account;
-                notificationEngine.sendNotification(account);
+                for(NotificationEngine notificationEngine : notificationEngines) {
+                    notificationEngine.sendNotification(account);
+                }
                 break;
             }
         }
