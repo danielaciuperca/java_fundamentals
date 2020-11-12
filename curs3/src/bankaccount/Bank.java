@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ResourceBundle;
 
 public class Bank {
 
@@ -77,7 +78,9 @@ public class Bank {
     }
 
     public void importBankAccounts() {
-        Path path = Paths.get("C:/Curs Java Fundamentals/curs3/bankAcounts.txt");
+        ResourceBundle resourceBundle = ResourceBundle.getBundle("application");
+        String importFileName = resourceBundle.getString("importFileName");
+        Path path = Paths.get(importFileName);
         try {
             BufferedReader reader = Files.newBufferedReader(path);
 
