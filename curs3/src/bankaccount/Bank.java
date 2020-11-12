@@ -2,6 +2,12 @@ package bankaccount;
 
 import bankaccount.notification.NotificationEngine;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 public class Bank {
 
     private Account[] bankAccounts = new Account[100];
@@ -69,6 +75,76 @@ public class Bank {
             }
         }
     }
+
+    public void importBankAccounts() {
+        Path path = Paths.get("C:/Curs Java Fundamentals/curs3/bankAcounts.txt");
+        try {
+            BufferedReader reader = Files.newBufferedReader(path);
+
+            boolean endOfFile = false;
+            while(!endOfFile) {
+                String line = reader.readLine();
+                if(line == null) {
+                    endOfFile = true;
+                } else {
+                    String[] allBankAccountDetails = line.split("/");
+                    String bankAccountType = allBankAccountDetails[0];
+
+                    if("debit".equals(bankAccountType)) {
+                        String[] bankAccountAttributeDetails = {allBankAccountDetails[1], allBankAccountDetails[2],
+                                allBankAccountDetails[3], allBankAccountDetails[4]};
+
+                        DebitBankAccount debitBankAccount = buildDebitBankAccount(bankAccountAttributeDetails);
+                        addBankAccount(debitBankAccount);
+                    } else if("savings".equals(bankAccountType)) {
+                        String[] bankAccountAttributeDetails = {allBankAccountDetails[1], allBankAccountDetails[2],
+                                allBankAccountDetails[3]};
+                        SavingsBankAccount savingsBankAccount = buildSavingsBankAccount(bankAccountAttributeDetails);
+                        addBankAccount(savingsBankAccount);
+                    } else {
+                        throw new RuntimeException("Incorrect bank account type.");
+                    }
+                }
+            }
+//            String line = "";
+//            while ( (line = reader.readLine()) != null ) {
+//               line.split();
+//            }
+        } catch(IOException e){
+            System.out.println(e.getMessage());
+        } finally {
+            System.out.println("Done importing from the file");
+        }
+    }
+
+    public DebitBankAccount buildDebitBankAccount(String[] bankAccountDetails) {
+        if (bankAccountDetails != null && bankAccountDetails.length == DebitBankAccount.NUMBER_OF_ATTRIBUTES) {
+            double balance = Double.parseDouble(bankAccountDetails[0]);
+            String accountNumber = bankAccountDetails[1];
+            String cardNumber = bankAccountDetails[2];
+            double withdrawalLimit = Double.parseDouble(bankAccountDetails[3]);
+
+            return new DebitBankAccount(balance, accountNumber, cardNumber, withdrawalLimit);
+        } else {
+            throw new RuntimeException("Incorrect mandatory details for the bank account. Needed: " +
+                    DebitBankAccount.NUMBER_OF_ATTRIBUTES + ", but it was " + bankAccountDetails.length);
+        }
+    }
+
+    public SavingsBankAccount buildSavingsBankAccount(String[] bankAccountDetails) {
+        if(bankAccountDetails != null && bankAccountDetails.length == SavingsBankAccount.NUMBER_OF_ATTRIBUTES) {
+            double balance = Double.parseDouble(bankAccountDetails[0]);
+            String accountNumber = bankAccountDetails[1];
+            int term = Integer.parseInt(bankAccountDetails[2]);
+
+            return new SavingsBankAccount(balance, accountNumber, term);
+        } else {
+            throw new RuntimeException("Incorrect mandatory details for the bank account. Needed: " +
+                    SavingsBankAccount.NUMBER_OF_ATTRIBUTES + ", but it was " + bankAccountDetails.length);
+        }
+    }
+
+
 
 
 

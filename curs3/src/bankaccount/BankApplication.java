@@ -35,6 +35,7 @@ public class BankApplication {
         System.out.println("Please type add in order to add a bank account");
         System.out.println("Please type print in order to view the details of all bank accounts");
         System.out.println("Please type search in order to search a bank account by its account number");
+        System.out.println("Please type import in order to import bank accounts from the import file");
         System.out.println("Please type exit in order to exit the application");
 
         while(true) {
@@ -57,6 +58,9 @@ public class BankApplication {
                     String accountNumber = scanner.nextLine();
                     bank.searchBankAccount(accountNumber);
                     break;
+                case "import" :
+                    bank.importBankAccounts();
+                    break;
                 default : System.out.println("Command doesn't exist.");
             }
         }
@@ -76,27 +80,13 @@ public class BankApplication {
 
     private static void addDebitBankAccount(Scanner scanner) {
         String[] bankAccountDetails = getBankAccountDetails(scanner);
-        if (bankAccountDetails != null && bankAccountDetails.length == DebitBankAccount.NUMBER_OF_ATTRIBUTES) {
-            double balance = Double.parseDouble(bankAccountDetails[0]);
-            String accountNumber = bankAccountDetails[1];
-            String cardNumber = bankAccountDetails[2];
-            double withdrawalLimit = Double.parseDouble(bankAccountDetails[3]);
-
-            DebitBankAccount debitBankAccount = new DebitBankAccount(balance, accountNumber, cardNumber, withdrawalLimit);
-            bank.addBankAccount(debitBankAccount);
-        } else {
-            System.out.println("Missing mandatory details for the bank account.");
-        }
-
+        DebitBankAccount debitBankAccount = bank.buildDebitBankAccount(bankAccountDetails);
+        bank.addBankAccount(debitBankAccount);
     }
 
     private static void addSavingsBankAccount(Scanner scanner) {
         String[] bankAccountDetails = getBankAccountDetails(scanner);
-        double balance = Double.parseDouble(bankAccountDetails[0]);
-        String accountNumber = bankAccountDetails[1];
-        int term = Integer.parseInt(bankAccountDetails[2]);
-
-        SavingsBankAccount savingsBankAccount = new SavingsBankAccount(balance, accountNumber, term);
+        SavingsBankAccount savingsBankAccount = bank.buildSavingsBankAccount(bankAccountDetails);
         bank.addBankAccount(savingsBankAccount);
     }
 

@@ -1,6 +1,8 @@
 package bankaccount;
 
 public class SavingsBankAccount extends Account {
+    public static final int NUMBER_OF_ATTRIBUTES = 3;
+
     private int term;
 
     public SavingsBankAccount(double balance, String accountNumber, int term) {
