@@ -1,6 +1,6 @@
 package bankaccount;
 
-public abstract class Account {
+public abstract class Account implements Comparable<Account> {
     protected double balance;
     protected String accountNumber;
 
@@ -27,4 +27,15 @@ public abstract class Account {
     }
 
     public abstract void close();
+
+    @Override
+    public int compareTo(Account account) {
+        if(this.balance > account.balance) {
+            return 1;
+        } else if(this.balance == account.balance){
+            return 0;
+        } else {
+            return -1;
+        }
+    }
 }
